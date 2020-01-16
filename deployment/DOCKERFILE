@@ -1,13 +1,13 @@
 # Get first golang image
 FROM golang:alpine as builder 
 RUN mkdir /build 
-ADD . /build/
+ADD . \main.go
 WORKDIR /build 
 RUN go build -o main .
 # Now extract the alpine image directly for a smaller container size
 FROM alpine
 RUN adduser -S -D -H -h /app appuser
 USER appuser
-COPY --from=builder /build/main /app/
+COPY --from=builder /build/main.go /app/
 WORKDIR /app
 CMD ["./main"]

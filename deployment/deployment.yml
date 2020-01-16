@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: safari-go-deployment
+  labels:
+    app: safari-go
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: safari-go
+  template:
+    metadata:
+      labels:
+        app: safari-go
+    spec:
+      containers:
+      - name: safari-go
+        image: safari-go:0.1
+        ports:
+        - containerPort: 80
