@@ -8,7 +8,7 @@ import (
 	"github.com/gorilla/mux"
 )
 
-// SafariPark is exported to be used elsewhere... and also to keep the linter happy
+// SafariPark is exported to keep the linter happy
 type SafariPark struct {
 	ID         string   `json:"id,omitempty"`
 	SafariPark string   `json:"safaripark,omitempty"`
