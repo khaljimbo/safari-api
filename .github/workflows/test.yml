@@ -23,7 +23,7 @@ jobs:
 
     - name: Get dependencies
       run: go get github.com/gorilla/mux \
-           go get github.com/stretchr/testify/assert
+           github.com/stretchr/testify/assert
 
     - name: Test
       run: go test ./api/main_test.go
