@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: safari-go
-        image: safari-go:0.1
+        image: dockerhub.io/khaljimbo/safari-go:0.1
         ports:
         - containerPort: 8000
