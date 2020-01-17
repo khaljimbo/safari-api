@@ -1,0 +1,17 @@
+# Get first golang image
+FROM golang:alpine as builder  
+COPY api /src/api
+WORKDIR /src/api
+
+# Install git and get external dependancies
+RUN apk add git coreutils \
+    && GO111MODULE=off go get github.com/gorilla/mux
+RUN go build -o /src/api
+# Now extract the alpine image directly for a smaller container size
+FROM alpine
+WORKDIR /bin
+COPY --from=builder /src/api/ ./
+ENV PORT=8000 \
+    LOG_FORMAT=text
+EXPOSE 8000
+CMD ["api"]

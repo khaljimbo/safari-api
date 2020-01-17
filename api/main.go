@@ -2,11 +2,16 @@ package main
 
 import (
 	"encoding/json"
+	"fmt"
 	"log"
 	"net/http"
 
 	"github.com/gorilla/mux"
 )
+
+func hello(w http.ResponseWriter, req *http.Request) {
+	fmt.Fprintln(w, "Welcome to the Safari Park API!")
+}
 
 // SafariPark is exported to keep the linter happy
 type SafariPark struct {
@@ -61,9 +66,10 @@ func main() {
 	router := mux.NewRouter()
 	park = append(park, SafariPark{ID: "1", SafariPark: "Kruger Park", Big5: "Yes", Address: &address{State: "Limpopo"}})
 	park = append(park, SafariPark{ID: "2", SafariPark: "Addo", Big5: "No", Address: &address{State: "Eastern Cape"}})
+	router.HandleFunc("/", hello).Methods("GET")
 	router.HandleFunc("/park", getSafariParkEndpoint).Methods("GET")
 	router.HandleFunc("/park/{id}", getParksEndpoint).Methods("GET")
 	router.HandleFunc("/park/{id}", createSafariParkEndpoint).Methods("POST")
 	router.HandleFunc("/park/{id}", deleteSafariParkEndpoint).Methods("DELETE")
-	log.Fatal(http.ListenAndServe(":12345", router))
+	log.Fatal(http.ListenAndServe(":8000", router))
 }
