@@ -11,11 +11,11 @@ jobs:
 
   build:
 
-    runs-on: windows-latest
+    runs-on: windows-2016
 
     steps:
     - uses: actions/checkout@v1
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag khaljimbo/safari-go:$(date +%s)
+      run: docker build . --file Dockerfile --tag khaljimbo/safari-go:latest
     - name: Push the Docker image
-      run: docker push khaljimbo/safari-go:$(date +%s)
+      run: docker push khaljimbo/safari-go:latest
