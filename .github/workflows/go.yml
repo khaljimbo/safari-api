@@ -25,4 +25,4 @@ jobs:
       run: go get github.com/gorilla/mux
 
     - name: Build
-      run: go build -v .
+      run: go build -v ./api/
