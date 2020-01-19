@@ -17,5 +17,3 @@ jobs:
     - uses: actions/checkout@v1
     - name: Build the Docker image
       run: docker build . -f deployment/Dockerfile -t khaljimbo/safari-go:latest
-    - name: Push the Docker image
-      run: docker push khaljimbo/safari-go:latest
