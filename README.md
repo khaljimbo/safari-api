@@ -106,3 +106,7 @@ The below table is the 12 Factors and how the app and environment can be moulded
 | 10  | Dev/prod parity: Keep development, staging, and production as similar as possible | In this example the environments would be identical, similarly if more environments were at play I would keep them as identical as possible, traditionally it is Data that is usually the only differing factor so keeping anonymized production like data should go a long way to help achieve this.
 | 11   | Logs: Treat logs as event streams | While there is no logging on this API for now, log streams are vital to understanding what your code is doing in a production environments. Apps like Seq and Honeycomb can be used for this. 
 | 12   | Admin processes: Run admin/management tasks as one-off processes | In production all admin tasks will be documented and automated to allow for repeatability.
+
+## Cloud Nativeness
+
+By being containerized and built for deployment to K8s using Helm this fits in the CNCF guidelines with being ready for scale and fast stateless rollout. 
