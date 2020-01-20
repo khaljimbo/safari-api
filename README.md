@@ -110,4 +110,4 @@ The below table is the 12 Factors and how the app and environment can be moulded
 
 ## Cloud Nativeness
 
-By being containerized and built for deployment to K8s using Helm this fits in the CNCF guidelines with being ready for scale and fast stateless rollout. 
+By being containerized and built for deployment to K8s using Helm this fits in the CNCF guidelines with being ready for scale. As this is containerized it is also cloud agnostic since the container image can be lifted and shifted to multiple cloud providers.
