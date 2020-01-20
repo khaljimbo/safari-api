@@ -21,13 +21,13 @@ Obviously this is built in Go. However outlined below is what I built this on.
 * Github Actions for CI\CD tasks
 * Helm 3
 
-Ordinarily I would use a CI server such as TeamCity (with the build manifest descriebd in Kotlin) or Azure DevOps (described in plain YAML) partnered with a CD tool such as Octopus Deploy or AzureDevOps (also described in YAML) however for this piece I have chosen GitHub actions for these duties.
+Ordinarily I would use a CI server such as TeamCity (with the build manifest described in Kotlin) or Azure DevOps (described in plain YAML) partnered with a CD tool such as Octopus Deploy or AzureDevOps (also described in YAML) however for this piece I have chosen GitHub actions for these duties. Mainly to learn how to use GitHub Actions.
 
 ### Access
 
-When the TODOs are completed I would host this externally. Using a service like Azure Front Door with georeplication DNS and WAF duties. Inter-POD connectivity will be handled by Consul or Istio. 
+When the TODOs are completed I would host this externally using a service like Azure Front Door for DNS and WAF duties. Inter-POD connectivity will be handled by Consul or Istio. 
 
-## Build
+## Build and hacking
 
 Using Go Get
 
@@ -71,15 +71,15 @@ Invoke-WebRequest -Uri "http://localhost:8000/park" -Method GET
 
 Plenty to do for this to expand on this as I use this to continue learning Go.
 
-* Learn more about testing and add code covereage checkers
+* Learn more about testing and add code covereage
 * Add some sort of Login system to protect access
 * Migrate CI\CD tasks to Travis or Jenkins
 * Add some sort of backend storage such as MySQL for persistant data storage
-* Learn Go structured logging and send events to Seq for log ingestion and inspection
+* Learn Go structured logging and send events to Seq for log ingestion and inspection using structured logging like the Logrus Go package.
 
 ### Following the 12 Factor App Principles
 
-Following the [12 Factor App ](https://12factor.net/) principles.
+Following the [12 Factor App ](https://12factor.net/) principles. Below overview copied from [12 Factor App ](https://12factor.net/)
 
 The twelve-factor app is a methodology for building software-as-a-service apps that:
 
