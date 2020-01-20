@@ -3,7 +3,7 @@ FROM golang:alpine as builder
 # Allow Microscaler to get meta details from the container  
 ARG VCS_REF
 LABEL org.label-schema.vcs-ref=$VCS_REF \
-      org.label-schema.vcs-url="https://github.com/khaljimbo/safari-api"
+      org.label-schema.vcs-url="https://github.com/khaljimbo/safaripark-api"
 COPY api /src/api
 WORKDIR /src/api
 # Install git and get external dependancies
