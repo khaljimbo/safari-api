@@ -32,7 +32,7 @@ When the TODOs are completed I would host this externally. Using a service like 
 Using Go Get
 
 ```powershell
-go get github.com/khaljimbo/safari-api
+go get github.com/khaljimbo/safari-api/api
 ```
 
 Building the Dockerfile
