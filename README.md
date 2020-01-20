@@ -1,8 +1,8 @@
 # safari-api
 
-![](https://github.com/khaljimbo/safari-api/workflows/Docker%20Image%20CI/badge.svg)
-![](https://github.com/khaljimbo/safari-api/workflows/Go%20Build/badge.svg)
-![](https://github.com/khaljimbo/safari-api/workflows/Go%20Test/badge.svg)
+![](https://github.com/khaljimbo/safaripark-api/workflows/Docker%20Image%20CI/badge.svg)
+![](https://github.com/khaljimbo/safaripark-api/workflows/Go%20Build/badge.svg)
+![](https://github.com/khaljimbo/safaripark-api/workflows/Go%20Test/badge.svg)
 [![Go Report Card](https://goreportcard.com/badge/github.com/khaljimbo/safari-api)](https://goreportcard.com/report/github.com/khaljimbo/safari-api)
 
 ## About
@@ -32,13 +32,13 @@ When the TODOs are completed I would host this externally using a service like A
 Using Go Get
 
 ```powershell
-go get github.com/khaljimbo/safari-api/api
+go get github.com/khaljimbo/safaripark-api/api
 ```
 
 Building the Dockerfile
 
 ```powershell
-docker build . -f deployment/Dockerfile -t khaljimbo/safari-go:latest
+docker build . -f deployment/Dockerfile -t khaljimbo/safaripark-go:latest
 ```
 
 ## Test
@@ -50,13 +50,13 @@ I have been using the standard "go test" framework. I have learned how to write 
 ### Locally via Docker Run
 
 ```powershell
-docker run -p 8000:8000/tcp -it khaljimbo/safari-api:latest
+docker run -p 8000:8000/tcp -it khaljimbo/safaripark-api:latest
 ```
 
 ### With Kubernetes and Helm
 
 ```powershell
-helm install ./deployment/helm/safari-go --name safari-api --name-space safari-api
+helm install ./deployment/helm/safari-go --name safaripark-api --name-space safaripark-api
 ```
 
 ## Using the API
