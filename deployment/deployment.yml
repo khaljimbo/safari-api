@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: safari-go-deployment
+  name: safaripark-go-deployment
   labels:
-    app: safari-go
+    app: safaripark-go
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: safari-go
+      app: safaripark-go
   template:
     metadata:
       labels:
-        app: safari-go
+        app: safaripark-go
     spec:
       containers:
-      - name: safari-go
-        image: dockerhub.io/khaljimbo/safari-go:0.1
+      - name: safaripark-go
+        image: dockerhub.io/khaljimbo/safari-go:latest
         ports:
         - containerPort: 8000
